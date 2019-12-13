@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-#include <rosbag/bah.h>
+#include <rosbag/bag.h>
 #include <rosbag/view.h>
 #include <sensor_msgs/Image.h>
 
