@@ -6,7 +6,10 @@ PROJECT(ros-bag-image-extractor)
 ADD_COMPILE_OPTIONS(-std=c++14)
 
 #find Boost library
-FIND_PACKAGE(Boost REQUIRED program_options)
+FIND_PACKAGE(Boost REQUIRED filesystem program_options)
+
+#find OpenCV library
+FIND_PACKAGE(OpenCV REQUIRED)
 
 #find ROS library
 SET(ROS_PATH "/opt/ros/melodic")
@@ -19,4 +22,4 @@ INCLUDE_DIRECTORIES("${CMAKE_CURRENT_SOURCE_DIR}/include")
 #build the source code
 FILE(GLOB SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
 ADD_EXECUTABLE(${PROJECT_NAME} "${SOURCES}")
-TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${Boost_LIBRARIES} rostime cpp_common roscpp_serialization roscpp rosbag_storage rosbag)
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${Boost_LIBRARIES} ${OpenCV_LIBS} rostime cpp_common roscpp_serialization roscpp rosbag_storage rosbag cv_bridge)
