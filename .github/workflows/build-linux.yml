@@ -1,4 +1,4 @@
-name: Ubuntu Native Build CI
+name: CI
 
 on: 
   push:
@@ -12,7 +12,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Install Aptitude Dependencies
-      run: |
-        apt -o APT::Sandbox::User=root update
-        apt install git cmake build-essential lsb-core
+    - name: Build the dependencies Ubuntu docker image
+      run: docker build . --file Dockerfile --tag rosbag-image-extractor-dependencies
