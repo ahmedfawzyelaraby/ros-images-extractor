@@ -13,4 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the dependencies Ubuntu docker image
-      run: docker build . --file Dockerfile --tag rosbag-image-extractor-dependencies
+      run: docker build . --file Dockerfile --tag rosbag-image-extractor-build
+    - name: Build the rosbag images extractor tool
+      run: docker run -v $(pwd):/rosbag-image-extractor -it rosbag-image-extractor-dependencies ./build.sh

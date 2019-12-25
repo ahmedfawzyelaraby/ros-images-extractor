@@ -12,3 +12,6 @@ WORKDIR /
 RUN wget https://github.com/opencv/opencv/archive/3.4.8.zip && unzip 3.4.8.zip && \
     cd opencv-3.4.8 && mkdir build && cd build && cmake .. && make -j2 && make install && \
     cd ../../ && rm -rf opencv-3.4.8 && rm -rf 3.4.8.zip
+
+WORKDIR /rosbag-image-extractor
+COPY . .
