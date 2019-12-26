@@ -16,3 +16,8 @@ jobs:
       run: docker build . --file Dockerfile --tag rosbag-image-extractor-build
     - name: Build the rosbag images extractor tool
       run: docker run -v $(pwd):/rosbag-image-extractor rosbag-image-extractor-build ./build.sh
+    - name: Aritfact Preparation
+      uses: actions/upload-artifact@v1
+      with:
+        name: rosbag-image-extractor
+        path: ./build/ros-bag-image-extractor
