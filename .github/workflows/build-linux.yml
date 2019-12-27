@@ -24,8 +24,3 @@ jobs:
       with:
         name: rosbag-image-extractor
         path: ./build/ros-bag-image-extractor
-    - name: Docker Aritfact Preparation
-      uses: actions/upload-artifact@v1
-      with:
-        name: rosbag-image-extractor-docker-image
-        path: ./build/ros-bag-image-extractor.tar

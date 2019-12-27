@@ -43,7 +43,7 @@ $ su - ${USER}
 ```
 ### Installation
 #### Native
-You can skip this step and the already built executable in github actions.
+You can skip this step and use the already built executable in github actions.
 ```bash
 $ git clone https://github.com/ahmedfawzyelaraby/ros-images-extractor.git
 $ cd ros-images-extractor
@@ -53,15 +53,10 @@ $ cmake ..
 $ make -j
 ```
 #### Inside Docker
-You can either build the image on your machine as follows:
 ```bash
 $ git clone https://github.com/ahmedfawzyelaraby/ros-images-extractor.git
 $ cd ros-images-extractor
 $ docker build . --file Dockerfile --tag rosbag-image-extractor-build
-```
-Or you can use the already built docker image in github actions by downloading it and running the following:
-```bash
-$ docker load rosbag-image-extractor.tar
 ```
 ### Usage
 #### Native
