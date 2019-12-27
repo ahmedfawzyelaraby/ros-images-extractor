@@ -18,7 +18,7 @@ jobs:
       run: docker run -v $(pwd):/rosbag-image-extractor rosbag-image-extractor-build ./build.sh
     - name: Save the docker image
       working-directory: ./build
-      run: docker save rosbag-image-extractor-build > rosbag-image-extractor.tar
+      run: sudo docker save rosbag-image-extractor-build > rosbag-image-extractor.tar
     - name: Native Aritfact Preparation
       uses: actions/upload-artifact@v1
       with:
