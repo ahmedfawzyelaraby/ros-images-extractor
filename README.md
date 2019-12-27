@@ -71,5 +71,6 @@ $ ./ros-bag-image-extractor -h # this command will get you the instructions you 
 #### Inside Docker
 ```bash
 $ docker run -it rosbag-image-extractor-build bash
+$ cd ./build
 $ ./ros-bag-image-extractor -h # this command will get you the instructions you need to run the code.
 ```
